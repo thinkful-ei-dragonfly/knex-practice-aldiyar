@@ -9,13 +9,13 @@ const knexInstance = knex({
 
 const searchTerm = 'fish'
 
-// knexInstance
-//   .select('*')
-//   .from('shopping_list')
-//   .where('name', 'ILIKE', `%${searchTerm}%`)
-//   .then(res => {
-//   console.log(res)
-// })
+knexInstance
+  .select('*')
+  .from('shopping_list')
+  .where('name', 'ILIKE', `%${searchTerm}%`)
+  .then(res => {
+  console.log(res)
+})
 
 function paginateItems(pageNumber) {
   const productsPerPage = 6
@@ -30,7 +30,7 @@ function paginateItems(pageNumber) {
   })
 }
 
-// paginateItems(1)
+paginateItems(1)
 
 function getItemsAddedAfter(daysAgo) {
   knexInstance
@@ -43,7 +43,7 @@ function getItemsAddedAfter(daysAgo) {
     })
 }
 
-// getItemsAddedAfter(3)
+getItemsAddedAfter(3)
 
 function getTotalForEachCategory() {
   knexInstance
